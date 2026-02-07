@@ -1,22 +1,19 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Box, Typography } from '@mui/material';
+import Login from './pages/Login';
 
-// Componentes temporários só para testar as rotas
-const Login = () => <Typography variant="h3">Tela de Login</Typography>;
-const Register = () => <Typography variant="h3">Tela de Cadastro</Typography>;
-const Dashboard = () => <Typography variant="h3">Gerenciamento de Usuários</Typography>;
+const Register = () => <h1>Tela de Cadastro</h1>;
+const Dashboard = () => <h1>Bem-vindo ao Sistema</h1>;
 
 function App() {
   return (
-    <Box sx={{ p: 4 }}>
-      <Routes>
+    <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Dashboard />} />
         
+        <Route path="/" element={<Dashboard />} />
+
         <Route path="*" element={<Navigate to="/login" />} />
-      </Routes>
-    </Box>
+    </Routes>
   );
 }
 
