@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
-const Register = () => <h1>Tela de Cadastro</h1>;
 const Dashboard = () => <h1>Bem-vindo ao Sistema</h1>;
 
 function App() {
