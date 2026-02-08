@@ -29,7 +29,7 @@ const Register = () => {
         setLoading(true);
 
         try {
-            await api.post('/user', { username, email, password });
+            await api.post('/users', { username, email, password });
 
             toast.success('Conta criada com sucesso! Faça login.');
             
