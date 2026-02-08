@@ -37,17 +37,13 @@ Uma dashboard administrativa moderna para gerenciamento de usuários, com foco e
 Acesse em http://localhost:5173
 
 ## 🧠 Destaque Técnico: Axios Interceptor
-Este projeto implementa um padrão avançado de interceptação de requisições. Se a API retornar erro 401 Unauthorized, o sistema automaticamente:
+Este projeto implementa um padrão de interceptação de requisições. Se a API retornar erro 401 Unauthorized, o sistema automaticamente:
 
-Pausa as requisições.
-
-Usa o refresh_token para solicitar um novo acesso.
-
-Atualiza o cabeçalho de autorização.
-
-Refaz a requisição original falha.
-
-Tudo isso acontece sem que o usuário perceba ou precise fazer login novamente.
+- Pausa as requisições.
+- Usa o refresh_token para solicitar um novo acesso.
+- Atualiza o cabeçalho de autorização.
+- Refaz a requisição original falha.
+- Tudo isso acontece sem que o usuário perceba ou precise fazer login novamente.
 
 ## 🤝 Back-end
 A API necessária para rodar este projeto está aqui: [Flask Auth API](https://github.com/AlanBispo/flask-auth-api).
