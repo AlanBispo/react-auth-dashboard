@@ -1,16 +1,53 @@
-# React + Vite
+# React Auth Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-Fast-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![MUI](https://img.shields.io/badge/Material--UI-Component_Lib-007FFF?style=for-the-badge&logo=mui&logoColor=white)
 
-Currently, two official plugins are available:
+Uma dashboard administrativa moderna para gerenciamento de usuários, com foco em segurança e experiência do usuário (UX). Este projeto consome a [Flask Auth API](https://github.com/AlanBispo/flask-auth-api).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias
 
-## React Compiler
+- **Core:** React.js + Vite
+- **UI Framework:** Material UI (MUI)
+- **HTTP Client:** Axios
+- **Roteamento:** React Router Dom
+- **Feedback:** React Toastify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- 🎨 **Interface Moderna:** Layout responsivo com Material UI.
+- 🔐 **Autenticação Segura:** Login persistente e proteção de rotas privadas.
+- 🔄 **Silent Refresh (Axios Interceptors):** Renovação automática do token JWT quando ele expira, sem deslogar o usuário (UX transparente).
+- 📝 **Gerenciamento de Usuários:** Listagem, Edição e Exclusão com feedback visual (Toasts).
+- ⚡ **Performance:** Build otimizado com Vite.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Como Rodar
+
+1. Clone o repositório para sua máquina.
+2. Instale as dependências:
+   ```
+    npm install
+    # ou
+    yarn install
+   ```
+3. Crie um arquivo .env na raiz (adpte a porta do seu back-end):
+   `VITE_API_BASE_URL=http://localhost:5001`
+
+Acesse em http://localhost:5173
+
+## 🧠 Destaque Técnico: Axios Interceptor
+Este projeto implementa um padrão avançado de interceptação de requisições. Se a API retornar erro 401 Unauthorized, o sistema automaticamente:
+
+Pausa as requisições.
+
+Usa o refresh_token para solicitar um novo acesso.
+
+Atualiza o cabeçalho de autorização.
+
+Refaz a requisição original falha.
+
+Tudo isso acontece sem que o usuário perceba ou precise fazer login novamente.
+
+## 🤝 Back-end
+A API necessária para rodar este projeto está aqui: [Flask Auth API](https://github.com/AlanBispo/flask-auth-api).
