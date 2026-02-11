@@ -28,7 +28,7 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const response = await api.post('/auth/login', { email, password });
+            const response = await api.post('/auth/login/', { email, password });
 
             const { access_token, refresh_token } = response.data;
 
