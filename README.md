@@ -6,6 +6,8 @@
 
 Uma dashboard administrativa moderna para gerenciamento de usuários, com foco em segurança e experiência do usuário (UX). Este projeto consome a [Flask Auth API](https://github.com/AlanBispo/flask-auth-api).
 
+Disponível para acessar em: https://react-auth-dashboard-kappa.vercel.app/login
+
 ## 🚀 Tecnologias
 
 - **Core:** React.js + Vite
